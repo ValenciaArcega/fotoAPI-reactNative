@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native";
-import { colors } from "./colors";
+import { colors as c } from "./colors";
 
-const c = colors;
 export const s = StyleSheet.create({
   container: {
     flex: 1,
@@ -21,7 +20,7 @@ export const s = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: c.mainColor__tint,
+    backgroundColor: c.ff,
     shadowColor: 'black',
     shadowOpacity: 0.1,
     shadowRadius: 12,
@@ -36,6 +35,6 @@ export const s = StyleSheet.create({
   btnText: {
     fontSize: 16,
     fontWeight: 600,
-    color: colors.black18,
+    color: c.black18,
   },
 });

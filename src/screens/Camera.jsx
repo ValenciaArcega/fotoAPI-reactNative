@@ -1,8 +1,9 @@
-import { View, Image, Text, TouchableOpacity, SafeAreaView } from "react-native";
-import { useEffect, useState } from "react";
-import { Camera } from 'expo-camera';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { View, Image, Text, TouchableOpacity, SafeAreaView, TouchableWithoutFeedback } from "react-native";
+import { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { Camera } from 'expo-camera';
+import { data as u } from "../data/photos";
 import { s } from '../styles/st-camera';
 
 Icon.loadFont();
@@ -25,6 +26,8 @@ export function Photo() {
     if (camera) {
       const data = await camera.takePictureAsync(null);
       setImage(data.uri);
+
+      u.push(data.uri);
     }
   };
 
@@ -33,10 +36,12 @@ export function Photo() {
   }
 
   const goHome = () => n.replace('Home');
+  const goLibrary = () => n.navigate('Library');
 
   // cm
   return (
     <SafeAreaView style={s.container}>
+
       <TouchableOpacity style={s.btnBack} onPress={goHome}>
         <Icon name="chevron-left" size={33} color="#181818" />
         <Text style={s.btnBackText}>Regresar</Text>
@@ -53,9 +58,9 @@ export function Photo() {
 
       <View style={s.containerToolBar}>
 
-        <View style={{ width: '34%' }}>
+        <TouchableOpacity style={{ width: '34%' }} onPress={goLibrary}>
           {image && <Image style={s.image} source={{ uri: image }} />}
-        </View>
+        </TouchableOpacity>
 
         <TouchableOpacity style={s.btnShot} onPress={() => takePicture()} >
           <Icon name="circle-slice-8" size={84} color="#fff" />
