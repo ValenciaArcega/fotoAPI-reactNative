@@ -10,7 +10,7 @@ export function Home() {
   return (
     <View style={s.container}>
       <Text style={s.homeTitle}>
-        FotoAPI
+        Foto<Text style={s.h}>API</Text>
       </Text>
       <TouchableOpacity onPress={goCamera} style={s.btnTakePhoto}>
         <Text style={s.btnText}>Abrir la camára</Text>

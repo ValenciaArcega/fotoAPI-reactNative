@@ -11,7 +11,6 @@ export const s = StyleSheet.create({
   homeTitle: {
     fontWeight: 800,
     fontSize: 32,
-    // letterSpacing: -.4,
   },
   btnTakePhoto: {
     height: 48,
@@ -37,4 +36,7 @@ export const s = StyleSheet.create({
     fontWeight: 600,
     color: c.black18,
   },
+  h: {
+    color: c.mainColor
+  }
 });

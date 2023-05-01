@@ -15,7 +15,7 @@ export default function App() {
 
         <Stack.Screen name='Library' component={Library} options={{ headerShown: false, animation: "fade_from_bottom" }}></Stack.Screen>
 
-        <Stack.Screen name='Photo' component={Photo} options={{ headerShown: false, animation: "flip" }}></Stack.Screen>
+        <Stack.Screen name='Photo' component={Photo} options={{ headerShown: false, animation: "fade" }}></Stack.Screen>
 
       </Stack.Navigator>
     </NavigationContainer>
